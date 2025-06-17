@@ -42,5 +42,6 @@ public class UnitConvertor {
         System.out.print("Enter feet to convert to meters: ");
         double feet = sc.nextDouble();
         System.out.println("Meters: " + convertFeetToMeters(feet));
+        sc.close();
     }
 }
