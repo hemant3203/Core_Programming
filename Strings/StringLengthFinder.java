@@ -19,6 +19,7 @@ public class StringLengthFinder {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
+        //
         int customLength = getLength(input);
         int builtinLength = input.length();
         System.out.println("Custom length: " + customLength);
