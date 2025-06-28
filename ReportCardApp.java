@@ -2,7 +2,7 @@ import java.util.*;
 
 class InvalidMarkException extends Exception {
     public InvalidMarkException(String message) {
-        super(message);
+        super(message);// use to handle Exception
     }
 }
 
@@ -11,20 +11,20 @@ class Student {
     String[] subjects;
     int[] marks;
 
-    public Student(String name, String[] subjects, int[] marks) throws InvalidMarkException {
+    public Student(String name, String[] subjects, int[] marks) throws InvalidMarkException {//create a constructor and thorows a exception to catch a error
         this.name = name;
         this.subjects = subjects;
         this.marks = new int[marks.length];
         
         for (int i = 0; i < marks.length; i++) {
             if (marks[i] < 0 || marks[i] > 100) {
-                throw new InvalidMarkException("Marks must be between 0 and 100. Invalid mark: " + marks[i]);
+                throw new InvalidMarkException("Marks must be between 0 and 100. Invalid mark: " + marks[i]);// marks be in between 0 to 100 not less or more than that
             }
             this.marks[i] = marks[i];
         }
     }
 
-    public double calculateAverage() {
+    public double calculateAverage() { //function to calculate a average
         int sum = 0;
         for (int mark : marks) {
             sum += mark;
@@ -32,7 +32,7 @@ class Student {
         return (double) sum / marks.length;
     }
 
-    public String assignGrade(double average) {
+    public String assignGrade(double average) { //function to assisgn a particular grade based in average
         if (average >= 90) return "A+";
         else if (average >= 80) return "A";
         else if (average >= 70) return "B";
@@ -41,7 +41,7 @@ class Student {
         else return "F";
     }
 
-    public void displayReportCard() {
+    public void displayReportCard() { // display function used to display the report card
         System.out.println("=====================================");
         System.out.println("Student Name: " + name);
         System.out.println("-------------------------------------");
@@ -59,7 +59,7 @@ class Student {
 }
 
 public class ReportCardApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //Main method to run a code 
         List<Student> students = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
 
