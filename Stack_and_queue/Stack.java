@@ -1,4 +1,4 @@
-package Stack;
+package Stack_and_queue;
 
 // public class Stack {
 //     private int [] stack;
