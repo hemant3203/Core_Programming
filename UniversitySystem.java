@@ -91,7 +91,9 @@ class Faculty implements Graded {
     }
 }
 
-// Faculty with Pass/Fail system
+
+
+
 class PassFailFaculty extends Faculty {
     PassFailFaculty(String name) {
         super(name);
