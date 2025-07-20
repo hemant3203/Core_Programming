@@ -4,6 +4,8 @@ package Stack_and_queue;
 public class ArrayQueue{
    private int[] queue;
     private int front;
+
+    
     private int rear;
     private int capacity;
     private int size;
