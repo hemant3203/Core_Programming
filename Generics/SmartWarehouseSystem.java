@@ -2,9 +2,9 @@ package Generics;
 
 import java.util.*;
 
-abstract class WarehouseItem{
+abstract class SmartWarehouseItem{
     String name;
-    WarehouseItem(String name) {
+    SmartWarehouseItem(String name) {
         this.name = name;
     }
     String getName() {
@@ -12,25 +12,25 @@ abstract class WarehouseItem{
     }
 }
 
-class Electronics extends WarehouseItem {
+class Electronics extends SmartWarehouseItem {
     Electronics(String name) {
         super(name);
     }
 }
 
-class Groceries extends WarehouseItem {
+class Groceries extends SmartWarehouseItem {
     Groceries(String name) {
         super(name);
     }
 }
 
-class Furniture extends WarehouseItem {
+class Furniture extends SmartWarehouseItem {
     Furniture(String name) {
         super(name);
     }
 }
 
-class Storage<T extends WarehouseItem> {
+class Storage<T extends SmartWarehouseItem> {
     private List<T> items = new ArrayList<>();
     void addItem(T item) {
         items.add(item);
@@ -38,8 +38,8 @@ class Storage<T extends WarehouseItem> {
     List<T> getItems() {
         return items;
     }
-    static void displayItems(List<? extends WarehouseItem> items) {
-        for (WarehouseItem item : items) {
+    static void displayItems(List<? extends SmartWarehouseItem> items) {
+        for (SmartWarehouseItem item : items) {
             System.out.println(item.getName());
         }
     }
